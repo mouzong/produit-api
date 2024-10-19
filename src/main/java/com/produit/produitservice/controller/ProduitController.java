@@ -17,6 +17,7 @@ public class ProduitController {
 
     @GetMapping("/all")
     public List<Produit> getAllProduits() {
+
         return produitService.getAllProduits();
     }
 
@@ -27,17 +28,17 @@ public class ProduitController {
     }
 
     @GetMapping("{id}")
-    public Produit getProduitById(@PathVariable long id){
+    public Produit getProduitById(@PathVariable long id) {
         return produitService.getProduitById(id);
     }
 
     @DeleteMapping("{id}")
-    public String deleteProduitById(@PathVariable("id") long idProduit){
+    public String deleteProduitById(@PathVariable("id") long idProduit) {
         return produitService.deleteProduitById(idProduit);
     }
 
     @PutMapping("{id}")
-    public Produit editProduit(@PathVariable long id, @RequestBody Produit produit){
+    public Produit editProduit(@PathVariable long id, @RequestBody Produit produit) {
         return produitService.editProduit(id, produit);
     }
 }
